@@ -1,0 +1,12 @@
+01_BookingBusiness/node_modules/
+01_BookingBusiness/.env
+
+02_BookingCustomers/node_modules/
+02_BookingCustomers/.env
+
+03_BookingAppointments/.env
+04_BookingCurrency/.env
+05_BookingService/.env
+06_BookingStaffMembers/.env
+Miscellaneous/.env
+

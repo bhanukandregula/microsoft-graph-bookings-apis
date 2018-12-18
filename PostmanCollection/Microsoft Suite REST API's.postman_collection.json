@@ -1,0 +1,1426 @@
+{
+	"info": {
+		"_postman_id": "26cb3440-304e-4991-84df-272d975a9670",
+		"name": "Microsoft Suite REST API's",
+		"description": "These are the bunch of APIs for Healthcare bot - to give a try and test the available APIs with the Microsoft Bookings.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Microsoft Graph API's",
+			"item": [
+				{
+					"name": "MS Graph Beta reference",
+					"item": [
+						{
+							"name": "Customer booking",
+							"item": [
+								{
+									"name": "Booking business",
+									"item": [
+										{
+											"name": "01 - List business",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses"
+													]
+												},
+												"description": "This will list out the available business."
+											},
+											"response": []
+										},
+										{
+											"name": "02 - Create business ---",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"displayName\":\"Bhanu Kandregula\",\n    \"address\":{\n        \"type\":\"home\",\n        \"postOfficeBox\":\"P.O. Box 123\",\n        \"street\":\"4567 Main Street\",\n        \"city\":\"Buffalo\",\n        \"state\":\"NY\",\n        \"countryOrRegion\":\"USA\",\n        \"postalCode\":\"98052\"\n    },\n    \"phone\":\"206-555-0100\",\n    \"email\":\"bhanu@bhanukandregula.com\",\n    \"webSiteUrl\":\"https://www.bhanukandregula.com\",\n    \"defaultCurrencyIso\":\"USD\"\n}"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses"
+													]
+												},
+												"description": "\n"
+											},
+											"response": []
+										},
+										{
+											"name": "03 - Get the business details",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "04 - Update business",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"displayName\":\"Healthcare\",\n    \"address\":{\n        \"type\":\"home\",\n        \"postOfficeBox\":\"P.O. Box 123\",\n        \"street\":\"4567 Main Street\",\n        \"city\":\"Buffalo\",\n        \"state\":\"NY\",\n        \"countryOrRegion\":\"USA\",\n        \"postalCode\":\"98052\"\n    },\n    \"phone\":\"206-555-0100\",\n    \"email\":\"manager@bhanu.com\",\n    \"webSiteUrl\":\"https://www.bhanu.com\",\n    \"defaultCurrencyIso\":\"USD\"\n}"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "05 - Delete business",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/FourthCoffee2@greatcode.onmicrosoft.com",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"FourthCoffee2@greatcode.onmicrosoft.com"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "06 - Publish business",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/BhanuKandregula@greatcode.onmicrosoft.com/publish",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"BhanuKandregula@greatcode.onmicrosoft.com",
+														"publish"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "07 - Unpublish business",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/BhanuKandregula@greatcode.onmicrosoft.com/unpublish",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"BhanuKandregula@greatcode.onmicrosoft.com",
+														"unpublish"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Booking customers",
+									"item": [
+										{
+											"name": "08 - List customers",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "88771627-8ea1-4a77-b44a-e3a825c48ac1",
+														"exec": [
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/customers",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"customers"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "09 - Create customer",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"displayName\": \"Sanjay Sahu\",\n    \"emailAddress\": \"sanjay@sanjaysahu.com\"\n}"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/customers",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"customers"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "10 - Get customer details",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/customers/d2dadbf4-a508-4d17-a0f1-bb131cb2f815",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"customers",
+														"d2dadbf4-a508-4d17-a0f1-bb131cb2f815"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "11 - Update customer ---",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"displayName\": \"Sanjay Kumar Sahu\",\n    \"emailAddress\": \"sanjay@sahu.com\"\n}\t"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/customers/f91d184c-31de-44bc-9cc3-4ecbdc968715",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"customers",
+														"f91d184c-31de-44bc-9cc3-4ecbdc968715"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "12 - Delete customer",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/customers/f91d184c-31de-44bc-9cc3-4ecbdc968715",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"customers",
+														"f91d184c-31de-44bc-9cc3-4ecbdc968715"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Booking appointment",
+									"item": [
+										{
+											"name": "13 - List calendar view",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/calendarView?start=2018-12-01T00:00:00Z&end=2018-12-30T00:00:00Z",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"calendarView"
+													],
+													"query": [
+														{
+															"key": "start",
+															"value": "2018-12-01T00:00:00Z"
+														},
+														{
+															"key": "end",
+															"value": "2018-12-30T00:00:00Z"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "14 - List appointments",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/appointments",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"appointments"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "15 - Create appointment",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n\t\"@odata.type\":\"#microsoft.graph.bookingAppointment\",\n    \"customerEmailAddress\":\"customer@customer.com\",\n    \"customerLocation\":{\n        \"@odata.type\":\"#microsoft.graph.location\",\n        \"address\":{\n            \"@odata.type\":\"#microsoft.graph.physicalAddress\",\n            \"city\":\"Buffalo\",\n            \"countryOrRegion\":\"USA\",\n            \"postalCode\":\"98052\",\n            \"postOfficeBox\":null,\n            \"state\":\"NY\",\n            \"street\":\"123 First Avenue\",\n            \"type@odata.type\":\"#microsoft.graph.physicalAddressType\",\n            \"type\":null\n        },\n        \"coordinates\":null,\n        \"displayName\":\"Customer\",\n        \"locationEmailAddress\":null,\n        \"locationType@odata.type\":\"#microsoft.graph.locationType\",\n        \"locationType\":null,\n        \"locationUri\":null,\n        \"uniqueId\":null,\n        \"uniqueIdType@odata.type\":\"#microsoft.graph.locationUniqueIdType\",\n        \"uniqueIdType\":null\n    },\n    \"customerName\":\"Jordan Miller\",\n    \"customerNotes\":\"Please be on time.\",\n    \"customerPhone\":\"213-555-0199\",\n    \"end\":{\n        \"@odata.type\":\"#microsoft.graph.dateTimeTimeZone\",\n        \"dateTime\":\"2018-12-10T12:30:00.0000000+00:00\",\n        \"timeZone\":\"UTC\"\n    },\n    \"invoiceAmount\":10.0,\n    \"invoiceDate\":{\n        \"@odata.type\":\"#microsoft.graph.dateTimeTimeZone\",\n        \"dateTime\":\"2018-12-05T12:30:00.0000000+00:00\",\n        \"timeZone\":\"UTC\"\n    },\n    \"invoiceId\":\"1001\",\n    \"invoiceStatus@odata.type\":\"#microsoft.graph.bookingInvoiceStatus\",\n    \"invoiceStatus\":\"open\",\n    \"invoiceUrl\":\"theInvoiceUrl\",\n    \"optOutOfCustomerEmail\":false,\n    \"postBuffer\":\"PT10M\",\n    \"preBuffer\":\"PT5M\",\n    \"price\":10.0,\n    \"priceType@odata.type\":\"#microsoft.graph.bookingPriceType\",\n    \"priceType\":\"fixedPrice\",\n    \"reminders@odata.type\":\"#Collection(microsoft.graph.bookingReminder)\",\n    \"reminders\":[\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingReminder\",\n            \"message\":\"This service is tomorrow\",\n            \"offset\":\"P1D\",\n            \"recipients@odata.type\":\"#microsoft.graph.bookingReminderRecipients\",\n            \"recipients\":\"allAttendees\"\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingReminder\",\n            \"message\":\"Please be available to enjoy your lunch service.\",\n            \"offset\":\"PT1H\",\n            \"recipients@odata.type\":\"#microsoft.graph.bookingReminderRecipients\",\n            \"recipients\":\"customer\"\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingReminder\",\n            \"message\":\"Please check traffic for next cater.\",\n            \"offset\":\"PT2H\",\n            \"recipients@odata.type\":\"#microsoft.graph.bookingReminderRecipients\",\n            \"recipients\":\"staff\"\n        }\n    ],\n    \"serviceId\":\"57da6774-a087-4d69-b0e6-6fb82c339976\",\n    \"serviceLocation\":{\n        \"@odata.type\":\"#microsoft.graph.location\",\n        \"address\":{\n            \"@odata.type\":\"#microsoft.graph.physicalAddress\",\n            \"city\":\"Buffalo\",\n            \"countryOrRegion\":\"USA\",\n            \"postalCode\":\"98052\",\n            \"postOfficeBox\":null,\n            \"state\":\"NY\",\n            \"street\":\"123 First Avenue\",\n            \"type@odata.type\":\"#microsoft.graph.physicalAddressType\",\n            \"type\":null\n        },\n        \"coordinates\":null,\n        \"displayName\":\"Customer location\",\n        \"locationEmailAddress\":null,\n        \"locationType@odata.type\":\"#microsoft.graph.locationType\",\n        \"locationType\":null,\n        \"locationUri\":null,\n        \"uniqueId\":null,\n        \"uniqueIdType@odata.type\":\"#microsoft.graph.locationUniqueIdType\",\n        \"uniqueIdType\":null\n    },\n    \"serviceName\":\"Catered bento\",\n    \"serviceNotes\":\"Customer requires punctual service.\",\n    \"start\":{\n        \"@odata.type\":\"#microsoft.graph.dateTimeTimeZone\",\n        \"dateTime\":\"2018-12-10T12:00:00.0000000+00:00\",\n        \"timeZone\":\"UTC\"\n    }\n}"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/appointments",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"appointments"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "16 - Get appointment details",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/appointments/AQMkADRmMzY1MWM0LTQzNjQtNGZlMy04NTkxLWViZjA0YzZlYTJlNQBGAAADHzUebjTdfk6zW0AOwHaltQcA5mQ-zRpaSU2sEQRNVcjYHQAAAgENAAAA5mQ-zRpaSU2sEQRNVcjYHQAAAhj_AAAA",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"appointments",
+														"AQMkADRmMzY1MWM0LTQzNjQtNGZlMy04NTkxLWViZjA0YzZlYTJlNQBGAAADHzUebjTdfk6zW0AOwHaltQcA5mQ-zRpaSU2sEQRNVcjYHQAAAgENAAAA5mQ-zRpaSU2sEQRNVcjYHQAAAhj_AAAA"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "17 - Update appointment",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "\n{\n    \"@odata.type\":\"#microsoft.graph.bookingAppointment\",\n    \"end\":{\n        \"@odata.type\":\"#microsoft.graph.dateTimeTimeZone\",\n        \"dateTime\":\"2018-12-10T12:00:00.0000000+00:00\",\n        \"timeZone\":\"UTC\"\n    },\n    \"invoiceDate\":{\n        \"@odata.type\":\"#microsoft.graph.dateTimeTimeZone\",\n        \"dateTime\":\"2018-12-10T10:00:00.0000000+00:00\",\n        \"timeZone\":\"UTC\"\n    },\n    \"start\":{\n        \"@odata.type\":\"#microsoft.graph.dateTimeTimeZone\",\n        \"dateTime\":\"2018-12-10T10:00:00.0000000+00:00\",\n        \"timeZone\":\"UTC\"\n    }\n}"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/appointments/AQMkADRmMzY1MWM0LTQzNjQtNGZlMy04NTkxLWViZjA0YzZlYTJlNQBGAAADHzUebjTdfk6zW0AOwHaltQcA5mQ-zRpaSU2sEQRNVcjYHQAAAgENAAAA5mQ-zRpaSU2sEQRNVcjYHQAAAhj_AAAA",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"appointments",
+														"AQMkADRmMzY1MWM0LTQzNjQtNGZlMy04NTkxLWViZjA0YzZlYTJlNQBGAAADHzUebjTdfk6zW0AOwHaltQcA5mQ-zRpaSU2sEQRNVcjYHQAAAgENAAAA5mQ-zRpaSU2sEQRNVcjYHQAAAhj_AAAA"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "18 - Delete appointment",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/appointments/AQMkADRmMzY1MWM0LTQzNjQtNGZlMy04NTkxLWViZjA0YzZlYTJlNQBGAAADHzUebjTdfk6zW0AOwHaltQcA5mQ-zRpaSU2sEQRNVcjYHQAAAgENAAAA5mQ-zRpaSU2sEQRNVcjYHQAAAhj_AAAA",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"appointments",
+														"AQMkADRmMzY1MWM0LTQzNjQtNGZlMy04NTkxLWViZjA0YzZlYTJlNQBGAAADHzUebjTdfk6zW0AOwHaltQcA5mQ-zRpaSU2sEQRNVcjYHQAAAgENAAAA5mQ-zRpaSU2sEQRNVcjYHQAAAhj_AAAA"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "19 - Cancel appointment",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"cancellationMessage\": \"Your appointment has been successfully cancelled. Please call us again.\"\n}\t"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/appointments/AQMkADRmMzY1MWM0LTQzNjQtNGZlMy04NTkxLWViZjA0YzZlYTJlNQBGAAADHzUebjTdfk6zW0AOwHaltQcA5mQ-zRpaSU2sEQRNVcjYHQAAAgENAAAA5mQ-zRpaSU2sEQRNVcjYHQAAAhj-AAAA/cancel",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"appointments",
+														"AQMkADRmMzY1MWM0LTQzNjQtNGZlMy04NTkxLWViZjA0YzZlYTJlNQBGAAADHzUebjTdfk6zW0AOwHaltQcA5mQ-zRpaSU2sEQRNVcjYHQAAAgENAAAA5mQ-zRpaSU2sEQRNVcjYHQAAAhj-AAAA",
+														"cancel"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"auth": {
+										"type": "bearer",
+										"bearer": [
+											{
+												"key": "token",
+												"value": "{{TEST_TOKEN}}",
+												"type": "string"
+											}
+										]
+									},
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Booking currency",
+									"item": [
+										{
+											"name": "20 - List currencies",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingCurrencies",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingCurrencies"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "21 - Get currenciy details",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingCurrencies/USD",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingCurrencies",
+														"USD"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Booking service",
+									"item": [
+										{
+											"name": "22 - List service",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/services",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"services"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "23 - Create service",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"@odata.type\":\"#microsoft.graph.bookingService\",\n    \"defaultDuration\":\"PT1H30M\",\n    \"defaultLocation\":{\n        \"@odata.type\":\"#microsoft.graph.location\",\n        \"address\":{\n            \"@odata.type\":\"#microsoft.graph.physicalAddress\",\n            \"city\":\"Buffalo\",\n            \"countryOrRegion\":\"USA\",\n            \"postalCode\":\"98052\",\n            \"postOfficeBox\":null,\n            \"state\":\"NY\",\n            \"street\":\"4567 First Street\",\n            \"type@odata.type\":\"#microsoft.graph.physicalAddressType\",\n            \"type\":null\n        },\n        \"coordinates\":null,\n        \"displayName\":\"Contoso Lunch Delivery\",\n        \"locationEmailAddress\":null,\n        \"locationType@odata.type\":\"#microsoft.graph.locationType\",\n        \"locationType\":null,\n        \"locationUri\":null,\n        \"uniqueId\":null,\n        \"uniqueIdType@odata.type\":\"#microsoft.graph.locationUniqueIdType\",\n        \"uniqueIdType\":null\n    },\n    \"defaultPrice\":10.0,\n    \"defaultPriceType@odata.type\":\"#microsoft.graph.bookingPriceType\",\n    \"defaultPriceType\":\"fixedPrice\",\n    \"defaultReminders@odata.type\":\"#Collection(microsoft.graph.bookingReminder)\",\n    \"defaultReminders\":[\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingReminder\",\n            \"message\":\"Please be reminded that this service is tomorrow.\",\n            \"offset\":\"P1D\",\n            \"recipients@odata.type\":\"#microsoft.graph.bookingReminderRecipients\",\n            \"recipients\":\"allAttendees\"\n        }\n    ],\n    \"description\":\"Individual bento box lunch delivery\",\n    \"displayName\":\"Bento\",\n    \"isHiddenFromCustomers\":false,\n    \"notes\":\"Home-cooked special\",\n    \"postBuffer\":\"PT10M\",\n    \"preBuffer\":\"PT5M\",\n    \"schedulingPolicy\":{\n        \"@odata.type\":\"#microsoft.graph.bookingSchedulingPolicy\",\n        \"allowStaffSelection\":true,\n        \"maximumAdvance\":\"P10D\",\n        \"minimumLeadTime\":\"PT10H\",\n        \"sendConfirmationsToOwner\":true,\n        \"timeSlotInterval\":\"PT1H\"\n    },\n    \"staffMemberIds@odata.type\":\"#Collection(String)\",\n    \"staffMemberIds\":[\n        \"d90d1e8c-5cfe-48cf-a2d5-966267375b6a\",\n        \"2f5f8794-0b29-45b5-b56a-2eb5ff7aa880\"\n    ]\n}"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/services",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"services"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "24 - Get service details",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/services/0593681d-8fca-48ba-9a70-81ff837d0817",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"services",
+														"0593681d-8fca-48ba-9a70-81ff837d0817"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "25 - Update service",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"@odata.type\":\"#microsoft.graph.bookingService\",\n    \"defaultDuration\":\"PT30M\"\n}"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/services/0593681d-8fca-48ba-9a70-81ff837d0817",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"services",
+														"0593681d-8fca-48ba-9a70-81ff837d0817"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "26 - Delete service",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/services/0593681d-8fca-48ba-9a70-81ff837d0817",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"services",
+														"0593681d-8fca-48ba-9a70-81ff837d0817"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"auth": {
+										"type": "bearer",
+										"bearer": [
+											{
+												"key": "token",
+												"value": "{{TEST_TOKEN}}",
+												"type": "string"
+											}
+										]
+									},
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Booking staff members",
+									"item": [
+										{
+											"name": "27 - List staff members",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/staffMembers",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"staffMembers"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "28 - Create staff member",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"@odata.type\":\"#microsoft.graph.bookingStaffMember\",\n    \"colorIndex\":1,\n    \"displayName\":\"Sanjay Pruthvi Raj\",\n    \"emailAddress\":\"sanjay@sanjayraj.com\",\n    \"role@odata.type\":\"#microsoft.graph.bookingStaffRole\",\n    \"role\":\"externalGuest\",\n    \"useBusinessHours\":true,\n    \"workingHours@odata.type\":\"#Collection(microsoft.graph.bookingWorkHours)\",\n    \"workingHours\":[\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"monday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n                {\n                    \"@odata.type\":\"#microsoft.graph.bookingWorkTimeSlot\",\n                    \"end\":\"17:00:00.0000000\",\n                    \"start\":\"08:00:00.0000000\"\n                }\n            ]\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"tuesday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n                {\n                    \"@odata.type\":\"#microsoft.graph.bookingWorkTimeSlot\",\n                    \"end\":\"17:00:00.0000000\",\n                    \"start\":\"08:00:00.0000000\"\n                }\n            ]\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"wednesday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n                {\n                    \"@odata.type\":\"#microsoft.graph.bookingWorkTimeSlot\",\n                    \"end\":\"17:00:00.0000000\",\n                    \"start\":\"08:00:00.0000000\"\n                }\n            ]\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"thursday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n                {\n                    \"@odata.type\":\"#microsoft.graph.bookingWorkTimeSlot\",\n                    \"end\":\"17:00:00.0000000\",\n                    \"start\":\"08:00:00.0000000\"\n                }\n            ]\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"friday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n                {\n                    \"@odata.type\":\"#microsoft.graph.bookingWorkTimeSlot\",\n                    \"end\":\"17:00:00.0000000\",\n                    \"start\":\"08:00:00.0000000\"\n                }\n            ]\n        }\n    ]\n}"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/staffMembers",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"staffMembers"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "29 - Get staff member details",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/staffMembers/673fc7c9-f864-4fe4-b7f3-6c525f5607ac",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"staffMembers",
+														"673fc7c9-f864-4fe4-b7f3-6c525f5607ac"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "30 - Update staff member",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"workingHours\":[\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"monday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n   \n            ]\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"tuesday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n                {\n                    \"@odata.type\":\"#microsoft.graph.bookingWorkTimeSlot\",\n                    \"end\":\"17:00:00.0000000\",\n                    \"start\":\"08:00:00.0000000\"\n                }\n            ]\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"wednesday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n                {\n                    \"@odata.type\":\"#microsoft.graph.bookingWorkTimeSlot\",\n                    \"end\":\"17:00:00.0000000\",\n                    \"start\":\"08:00:00.0000000\"\n                }\n            ]\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"thursday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n                {\n                    \"@odata.type\":\"#microsoft.graph.bookingWorkTimeSlot\",\n                    \"end\":\"17:00:00.0000000\",\n                    \"start\":\"08:00:00.0000000\"\n                }\n            ]\n        },\n        {\n            \"@odata.type\":\"#microsoft.graph.bookingWorkHours\",\n            \"day@odata.type\":\"#microsoft.graph.dayOfWeek\",\n            \"day\":\"friday\",\n            \"timeSlots@odata.type\":\"#Collection(microsoft.graph.bookingWorkTimeSlot)\",\n            \"timeSlots\":[\n                {\n                    \"@odata.type\":\"#microsoft.graph.bookingWorkTimeSlot\",\n                    \"end\":\"16:00:00.0000000\",\n                    \"start\":\"08:00:00.0000000\"\n                }\n            ]\n        }\n    ]\n}"
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/staffMembers/673fc7c9-f864-4fe4-b7f3-6c525f5607ac",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"staffMembers",
+														"673fc7c9-f864-4fe4-b7f3-6c525f5607ac"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "31 - Delete staff member",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{TEST_TOKEN}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/staffMembers/673fc7c9-f864-4fe4-b7f3-6c525f5607ac",
+													"protocol": "https",
+													"host": [
+														"graph",
+														"microsoft",
+														"com"
+													],
+													"path": [
+														"beta",
+														"bookingBusinesses",
+														"Healthcare@greatcode.onmicrosoft.com",
+														"staffMembers",
+														"673fc7c9-f864-4fe4-b7f3-6c525f5607ac"
+													]
+												}
+											},
+											"response": []
+										}
+									],
+									"auth": {
+										"type": "bearer",
+										"bearer": [
+											{
+												"key": "token",
+												"value": "{{TEST_TOKEN}}",
+												"type": "string"
+											}
+										]
+									},
+									"_postman_isSubFolder": true
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Test Graph API",
+					"item": [
+						{
+							"name": "Its me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJ0eXAiOiJKV1QiLCJub25jZSI6IkFRQUJBQUFBQUFDNXVuYTBFVUZnVElGOEVsYXh0V2pUSDE1LTJLSmx2QjFDQjRTX1FiS2kyOEQxbFJvcEJ1ZDRhQnhiekhoblZRb0piSk1NcHc4OS1iMU0yU2k0OFhxNjJCbi1SUFZkbUtHRElnZXpmOHpCZ3lBQSIsImFsZyI6IlJTMjU2IiwieDV0Ijoid1VMbVlmc3FkUXVXdFZfLWh4VnRESkpaTTRRIiwia2lkIjoid1VMbVlmc3FkUXVXdFZfLWh4VnRESkpaTTRRIn0.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC82ZmY5ZDY1My0xN2Q0LTQ1MjItOTdiMi1mMTMzMmMzN2NkY2UvIiwiaWF0IjoxNTQzOTYyMjQ3LCJuYmYiOjE1NDM5NjIyNDcsImV4cCI6MTU0Mzk2NjE0NywiYWNjdCI6MCwiYWNyIjoiMSIsImFpbyI6IkFTUUEyLzhKQUFBQWFnL1cyWXhiWS9HS1pRb0dOSkc3NDJRaG83Y2N1MWM2dXIxLzFNbXgvamc9IiwiYW1yIjpbInB3ZCJdLCJhcHBfZGlzcGxheW5hbWUiOiJHcmFwaCBleHBsb3JlciIsImFwcGlkIjoiZGU4YmM4YjUtZDlmOS00OGIxLWE4YWQtYjc0OGRhNzI1MDY0IiwiYXBwaWRhY3IiOiIwIiwiZmFtaWx5X25hbWUiOiJLYW5kcmVndWxhIiwiZ2l2ZW5fbmFtZSI6IkJoYW51IFByYWthc2giLCJpcGFkZHIiOiIxMi4yNDcuMTYwLjEwNiIsIm5hbWUiOiJCaGFudSBQcmFrYXNoIEthbmRyZWd1bGEiLCJvaWQiOiJkNTUyOGZlZi0wMTVmLTQ2ZDMtODAyNC0zOGUyODU2OTJkNWMiLCJwbGF0ZiI6IjUiLCJwdWlkIjoiMTAwMzNGRkZBQkFGOTYxNiIsInNjcCI6IkJvb2tpbmdzLk1hbmFnZS5BbGwgQm9va2luZ3MuUmVhZC5BbGwgQm9va2luZ3MuUmVhZFdyaXRlLkFsbCBCb29raW5nc0FwcG9pbnRtZW50LlJlYWRXcml0ZS5BbGwgQ2FsZW5kYXJzLlJlYWRXcml0ZSBDb250YWN0cy5SZWFkV3JpdGUgRmlsZXMuUmVhZFdyaXRlLkFsbCBNYWlsLlJlYWRXcml0ZSBOb3Rlcy5SZWFkV3JpdGUuQWxsIG9wZW5pZCBQZW9wbGUuUmVhZCBwcm9maWxlIFNpdGVzLlJlYWRXcml0ZS5BbGwgVGFza3MuUmVhZFdyaXRlIFVzZXIuUmVhZEJhc2ljLkFsbCBVc2VyLlJlYWRXcml0ZSBlbWFpbCIsInN1YiI6Imw2YWtESmZ1YWlmYnhrTzZDSnFvQXlzZUZrV2owUmNOR1dGTFg5QUlINGciLCJ0aWQiOiI2ZmY5ZDY1My0xN2Q0LTQ1MjItOTdiMi1mMTMzMmMzN2NkY2UiLCJ1bmlxdWVfbmFtZSI6ImJrYW5kcmVnQGdyZWF0Y29kZS5vbm1pY3Jvc29mdC5jb20iLCJ1cG4iOiJia2FuZHJlZ0BncmVhdGNvZGUub25taWNyb3NvZnQuY29tIiwidXRpIjoiZ2lSR1l5eFpVRW1fYkdncGgtZ2RBQSIsInZlciI6IjEuMCIsIndpZHMiOlsiNjJlOTAzOTQtNjlmNS00MjM3LTkxOTAtMDEyMTc3MTQ1ZTEwIl0sInhtc19zdCI6eyJzdWIiOiJKd3I5RGd2UHk4WXV3c1o3SDA3THdOZ2FUcGdXRHdzUEJiTzJLOFBUNDB3In0sInhtc190Y2R0IjoxNTI3NjI2ODU3fQ.ZHfnheuuqvs4OiYYWXcTp9Ivpd3DgD2PkGJKI2kWKAlb5i3fesE1bNvb_dSXskP6NV53lXNdBP0DtizOUtCoLYxaWH7f8O1huj5_lErYNFAnNYkayj4e27E_0J-AVimVJ0EBeWyFTflYpcdNTZpqKIBO0ddagwc4DxcdtoR-Nvmb6bYR9lUbR_mCQvA3uGKPBpHHPEQiYWeHIP6pN14SXTkBJ6iiFxhlVmNdJBiz-yUTycXh1HQyaArG78ZLMGf8kI2myXbqMIsazV-Czq5ADiMfJn7xQKA9j9B3srXgYnQ7SpqOj6Bl0KR-Elg9vatguUkzB6Wyu_tP3zFZWzvbcg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://graph.microsoft.com/v1.0/me/",
+									"protocol": "https",
+									"host": [
+										"graph",
+										"microsoft",
+										"com"
+									],
+									"path": [
+										"v1.0",
+										"me",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "MS Health Vault API's",
+					"item": [],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "998ec5b8-2cec-4868-a07f-27bd8a302772",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b496de9c-d87d-4f26-9756-8ae683334de3",
+				"type": "text/javascript",
+				"exec": [
+					"var jsonData = JSON.parse(responseBody);",
+					"postman.setEnvironmentVariable(\"ACCESS_TOKEN\", jsonData.access_token);"
+				]
+			}
+		}
+	]
+}
