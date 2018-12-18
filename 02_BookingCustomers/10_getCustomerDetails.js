@@ -1,6 +1,5 @@
 // Require the dependencies.
-const debug = require('debug')('HealthBot-NODE-APIs:listDocFromAPIs');
-const http =  require('http');
+const debug = require('debug')('MSBookings_NODE_APIs:getCustomerDetails');
 var bodyParser = require('body-parser');
 const rp = require('request-promise');
 require('dotenv').config();
@@ -17,15 +16,15 @@ app.get('/', function(request, response){
     response.send("Express server is running successfully.");
 });
 
-
 // Get the list of staffmembers from Microsoft Bookings.
 // Healthcare@greatcode.onmicrosoft.com - Bookings organization name.
-app.get('/listdocfromapis', function(request, response){
+app.get('/getCustomerDetails', function(request, response){
     
     // configure the request params.
+    // uri inclused the Business ID of which we need to get the details.
     const options = {
         method: 'GET',
-        uri: 'https://graph.microsoft.com/beta/bookingBusinesses/Healthcare@greatcode.onmicrosoft.com/staffMembers',
+        uri: process.env.getCustomerDetailsURI,
         json: true,
         headers: {
             "Content-Type" : "application/json",
@@ -35,6 +34,7 @@ app.get('/listdocfromapis', function(request, response){
 
     // request-promise object to send request to endpoint.
     rp(options).then(response => {
+        debug("POST request was successfull.");
         debug("This is the response: ", response);
     }).catch(function(error){
         debug("This is the error object: ", error);

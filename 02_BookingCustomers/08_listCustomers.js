@@ -1,5 +1,5 @@
 // Require the dependencies.
-const debug = require('debug')('MSBookings-NODE-APIs:listCustomers');
+const debug = require('debug')('MSBookings_NODE_APIs:listCustomers');
 var bodyParser = require('body-parser');
 const rp = require('request-promise');
 require('dotenv').config();
@@ -23,7 +23,7 @@ app.get('/listCustomers', function(request, response){
     // configure the request params.
     const options = {
         method: 'GET',
-        uri: process.env.listCustomersURL,
+        uri: process.env.listCustomersURI,
         json: true,
         headers: {
             "Content-Type" : "application/json",
